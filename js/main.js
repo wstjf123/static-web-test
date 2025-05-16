@@ -88,5 +88,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 通过添加CSS类初始化页面加载动画
     document.body.classList.add('loaded');
     
+    // 移除首页标题的所有可能的动画效果
+    const homeTitle = document.querySelector('#home h2');
+    if (homeTitle) {
+        homeTitle.style.animation = 'none';
+        homeTitle.style.transform = 'none';
+    }
+    
     console.log('静态网页测试项目已加载完成，动画效果已激活！');
 });

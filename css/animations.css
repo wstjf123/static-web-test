@@ -157,9 +157,11 @@ footer {
     animation: fadeIn 1s ease-out;
 }
 
-/* 添加脉动效果到首页标题 */
+/* 移除首页标题的脉动效果 */
 #home h2 {
-    animation: pulse 2s infinite;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
 }
 
 /* 添加抖动效果到联系按钮 - 吸引注意力 */
