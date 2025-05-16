@@ -70,17 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
     
-    // 添加鼠标移动视差效果到标题
-    const header = document.querySelector('header');
-    
-    if (header) {
-        document.addEventListener('mousemove', function(e) {
-            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-            
-            header.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        });
-    }
+    // 鼠标移动视差效果已移除，保持标题稳定
     
     // 添加鼠标悬停效果到所有部分
     sections.forEach(section => {

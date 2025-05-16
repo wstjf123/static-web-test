@@ -78,6 +78,8 @@
 /* 应用动画到网站元素 */
 header {
     animation: fadeIn 1s ease-out;
+    /* 确保标题稳定不移动 */
+    transform: none !important;
 }
 
 header h1 {
