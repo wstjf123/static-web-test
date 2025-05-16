@@ -4,15 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const showInfoButton = document.getElementById('showInfo');
     const contactInfo = document.getElementById('contactInfo');
     
-    // 添加点击事件监听器
+    // 添加点击事件监听器 - 使用新的动画类
     if (showInfoButton && contactInfo) {
         showInfoButton.addEventListener('click', function() {
-            // 切换联系信息的显示状态
-            if (contactInfo.style.display === 'none') {
-                contactInfo.style.display = 'block';
+            // 使用 CSS 类切换，而不是直接修改 style
+            contactInfo.classList.toggle('visible');
+            
+            if (contactInfo.classList.contains('visible')) {
                 showInfoButton.textContent = '隐藏联系信息';
             } else {
-                contactInfo.style.display = 'none';
                 showInfoButton.textContent = '显示联系信息';
             }
         });
@@ -44,5 +44,59 @@ document.addEventListener('DOMContentLoaded', function() {
         footerYear.innerHTML = footerYear.innerHTML.replace('2025', currentYear);
     }
     
-    console.log('静态网页测试项目已加载完成！');
+    // 滚动动画 - 当元素进入视口时触发动画
+    const sections = document.querySelectorAll('section');
+    
+    // 滚动观察器初始化
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // 可选：如果只想触发一次动画，可以取消观察
+                // observer.unobserve(entry.target);
+            } else {
+                // 如果想在元素离开视口时重置动画，取消注释下面的代码
+                // entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        root: null, // 使用视口作为根
+        threshold: 0.1, // 当10%的元素可见时触发
+        rootMargin: '-50px' // 在元素进入视口50px后触发
+    });
+    
+    // 开始观察所有部分
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+    
+    // 添加鼠标移动视差效果到标题
+    const header = document.querySelector('header');
+    
+    if (header) {
+        document.addEventListener('mousemove', function(e) {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            header.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+    }
+    
+    // 添加鼠标悬停效果到所有部分
+    sections.forEach(section => {
+        section.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.1)';
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        section.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // 通过添加CSS类初始化页面加载动画
+    document.body.classList.add('loaded');
+    
+    console.log('静态网页测试项目已加载完成，动画效果已激活！');
 });
