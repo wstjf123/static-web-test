@@ -3,50 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>静态网页测试</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <title>苹果风格测试网站</title>
+    <link rel="stylesheet" href="css/apple-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我的测试网站</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Test Site</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">功能</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <main>
-        <section id="home">
-            <h2>首页</h2>
-            <p>这是一个用于测试的静态网页项目。</p>
-            <p>您可以随意修改和扩展这个项目。</p>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1 class="hero-title fade-in">优雅的设计，卓越的体验</h1>
+                <h2 class="hero-subtitle fade-in delay-1">发现全新的测试网站，简约而不简单</h2>
+                <a href="#features" class="button fade-in delay-2">了解更多</a>
+            </div>
         </section>
         
-        <section id="about">
-            <h2>关于</h2>
-            <p>这个项目使用纯HTML、CSS和JavaScript创建。</p>
-            <p>没有使用任何框架或库，保持简单和轻量级。</p>
+        <section id="features" class="section-container">
+            <div class="container">
+                <h2 class="section-title slide-up">功能特点</h2>
+                
+                <div class="card-grid">
+                    <div class="card slide-up delay-1">
+                        <h3 class="card-title">响应式设计</h3>
+                        <p class="card-text">完美适配各种屏幕尺寸，无论是桌面设备还是移动设备，都能提供卓越的用户体验。</p>
+                        <a href="#" class="link-button">了解更多</a>
+                    </div>
+                    
+                    <div class="card slide-up delay-2">
+                        <h3 class="card-title">现代化界面</h3>
+                        <p class="card-text">采用最新的设计趋势和交互模式，提供直观、简洁且富有吸引力的用户界面。</p>
+                        <a href="#" class="link-button">了解更多</a>
+                    </div>
+                    
+                    <div class="card slide-up delay-3">
+                        <h3 class="card-title">流畅动画</h3>
+                        <p class="card-text">精心设计的过渡效果和动画，为用户提供愉悦的视觉体验和自然的交互反馈。</p>
+                        <a href="#" class="link-button">了解更多</a>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <section id="contact">
-            <h2>联系我们</h2>
-            <p>如果您有任何问题或建议，请随时联系我们。</p>
-            <button id="showInfo">显示联系信息</button>
-            <div id="contactInfo">
-                <p>邮箱: example@example.com</p>
-                <p>电话: 123-456-7890</p>
+        <section id="contact" class="section-container">
+            <div class="container">
+                <h2 class="section-title slide-up">联系我们</h2>
+                <p class="slide-up delay-1">如果您有任何问题或建议，请随时与我们联系。我们将尽快回复您。</p>
+                
+                <div class="slide-up delay-2" style="text-align: center; margin-top: 30px;">
+                    <button id="showInfo" class="button">显示联系信息</button>
+                </div>
+                
+                <div id="contactInfo" class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p>邮箱: example@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <p>电话: 123-456-7890</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     
-    <footer>
-        <p>&copy; 2025 静态网页测试项目 | 由GitHub Pages提供支持</p>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2025 苹果风格测试网站 | 由GitHub Pages提供支持</p>
+        </div>
     </footer>
     
-    <script src="js/main.js"></script>
+    <script src="js/apple-script.js"></script>
 </body>
 </html>
