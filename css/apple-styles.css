@@ -16,6 +16,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* 移除安卓上的点击高亮/波纹效果 */
+  outline: none;
+}
+
+/* 按钮和交互元素的通用样式 */
+button, .button, a, .card, .link-button, .nav-link {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* 浏览器兼容性设置 */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 html {

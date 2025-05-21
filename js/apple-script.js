@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (contactInfo.classList.contains('visible')) {
                 showInfoButton.textContent = '隐藏联系信息';
+                showInfoButton.setAttribute('aria-expanded', 'true');
                 // 添加微妙的缩放效果
                 showInfoButton.style.transform = 'scale(0.95)';
                 setTimeout(() => {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 300);
             } else {
                 showInfoButton.textContent = '显示联系信息';
+                showInfoButton.setAttribute('aria-expanded', 'false');
                 // 添加微妙的缩放效果
                 showInfoButton.style.transform = 'scale(0.95)';
                 setTimeout(() => {
