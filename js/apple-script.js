@@ -237,18 +237,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 页面加载完成后的初始动画
-    setTimeout(() => {
-        document.querySelectorAll('.fade-in, .slide-up, .scale-reveal').forEach(el => {
-            el.style.opacity = '1';
-            if (el.classList.contains('slide-up')) {
-                el.style.transform = 'translateY(0)';
-            } else if (el.classList.contains('scale-reveal')) {
-                el.style.transform = 'scale(1)';
-            }
-        });
-    }, 300);
-    
     // 增强"了解更多"链接的特殊效果
     const learnMoreLinks = document.querySelectorAll('.link-button');
     
